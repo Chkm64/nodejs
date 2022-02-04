@@ -21,7 +21,7 @@ function adios(nombre){
 	return new Promise((resolve, reject) =>{
 		setTimeout(function(){
 			console.log('Adios', nombre);
-			resolve();
+			resolve(nombre);
 		});
 	});
 }
@@ -33,7 +33,7 @@ hola('José')
 	.then(hablar)
 	.then(adios)
 	.then((nombre) => {
-		console.log('Terminando el proceso');
+		console.log('Terminando el proceso ' + nombre);
 	})
 	.catch(error => {
 		console.error('Hemos encontrado un error');
